@@ -9,13 +9,10 @@ class ClienteViewSet(viewsets.ModelViewSet):
     # Obliga a que el usuario esté autenticado para usar la API
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
-        # FILTRO SENIOR: El cobrador SOLO ve los clientes que él registró
-        user = self.request.user
-        if user.role == 'admin':
-            return Cliente.objects.filter(activo=True) # El administrador ve todo
-        return Cliente.objects.filter(usuario=user, activo=True)
-
+    queryset = Cliente.objects.all() 
+    serializer_class = ClienteSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
     def perform_create(self, serializer):
         # Inyecta automáticamente el usuario que está logueado como dueño del cliente
         serializer.save(usuario=self.request.user)
