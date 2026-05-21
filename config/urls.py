@@ -1,22 +1,16 @@
-"""
-URL configuration for config project.
+import django.contrib
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from cartera.views import ClienteViewSet, FiadorViewSet, PrestamoViewSet, PagoViewSet
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/6.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path
+# El Router genera automáticamente rutas como: /api/clientes/, /api/prestamos/, etc.
+router = DefaultRouter()
+router.register(r'clientes', ClienteViewSet, basename='cliente')
+router.register(r'fiadores', FiadorViewSet, basename='fiador')
+router.register(r'prestamos', PrestamoViewSet, basename='prestamo')
+router.register(r'pagos', PagoViewSet, basename='pago')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', django.contrib.admin.site.sender if hasattr(django.contrib.admin.site, 'sender') else django.contrib.admin.site.urls), # Panel normal de Django
+    path('api/', include(router.urls)), # 👈 Aquí se conectan todas tus APIs
 ]
