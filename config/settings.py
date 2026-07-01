@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'cartera',
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = 'cartera.User'
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,3 +132,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',  # 👈 Bloquea el acceso a intrusos
     ],
 }
+# Permitir que Angular (que corre por defecto en el puerto 4200) consulte la API
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+    "http://127.0.0.1:4200",
+]

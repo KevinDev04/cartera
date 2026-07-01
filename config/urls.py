@@ -15,4 +15,5 @@ urlpatterns = [
     path('admin/', django.contrib.admin.site.sender if hasattr(django.contrib.admin.site, 'sender') else django.contrib.admin.site.urls), # Panel normal de Django
     path('api/', include(router.urls)), # 👈 Aquí se conectan todas tus APIs
     path('api/login/', obtain_auth_token, name='api_login'), # 👈 NUEVO ENDPOINT DE LOGIN
-]
+    path('', include('cartera.urls')),
+    ]
