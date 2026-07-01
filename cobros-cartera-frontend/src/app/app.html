@@ -1,0 +1,29 @@
+<div class="min-h-screen bg-slate-900 px-4 py-4 font-sans text-white">
+
+  <div class="max-w-md mx-auto flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+    <div>
+      <h1 class="text-lg font-bold tracking-tight">Cobros Cartera</h1>
+      <p class="text-xs text-slate-400">Ruta de trabajo</p>
+    </div>
+    
+    <button (click)="alternarFormulario()" 
+      class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all active:scale-95 shadow-md flex items-center gap-1.5"
+      [ngClass]="mostrarFormulario ? 'bg-rose-600 hover:bg-rose-500 text-white' : 'bg-emerald-600 hover:bg-emerald-500 text-white'">
+      {{ mostrarFormulario ? '❌ Cerrar' : '➕ Nuevo Crédito' }}
+    </button>
+  </div>
+
+  @if (mostrarFormulario) {
+    <div class="transition-all duration-300 ease-in-out">
+      <app-nuevo-credito></app-nuevo-credito>
+    </div>
+  }
+
+  <div class="mt-2">
+    <div class="max-w-md mx-auto mb-2 px-1">
+      <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">🎯 Pendientes de Hoy</span>
+    </div>
+    <app-lista-cobros></app-lista-cobros>
+  </div>
+
+</div>

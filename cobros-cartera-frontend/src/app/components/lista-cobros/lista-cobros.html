@@ -1,0 +1,91 @@
+<div class="min-h-screen bg-slate-900 text-white p-4 font-sans max-w-md mx-auto flex flex-col justify-between">
+  
+  <!-- Encabezado fijo arriba -->
+  <header class="flex justify-between items-center pb-4 border-b border-slate-800 shrink-0">
+    <div>
+      <h1 class="text-xl font-bold text-emerald-400">Cobros Cartera</h1>
+      <p class="text-xs text-slate-400">Desliza para ver tu ruta · Hoy</p>
+    </div>
+    <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-medium border border-emerald-500/20">
+      3 por cobrar
+    </span>
+  </header>
+
+  <!-- Contenedor con Scroll Horizontal Tipo Historias de Instagram -->
+  <!-- 'snap-x snap-mandatory' hace que la tarjeta se "pegue" magnéticamente al deslizar -->
+  <main class="flex-1 my-auto flex items-center overflow-x-auto snap-x snap-mandatory scrollbar-none space-x-4 py-8">
+    
+    <!-- TARJETA CLIENTE 1 -->
+    <div class="w-full shrink-0 snap-center bg-slate-800 rounded-3xl p-6 border border-slate-700/60 shadow-2xl flex flex-col justify-between min-h-[400px]">
+      <div>
+        <div class="flex justify-between items-start mb-4">
+          <span class="bg-slate-900 text-slate-400 text-xs font-bold px-3 py-1 rounded-full">
+            CLIENTE 1 DE 3
+          </span>
+          <span class="bg-amber-500/10 text-amber-400 text-xs px-2.5 py-1 rounded-md border border-amber-500/20 font-medium">
+            Pendiente
+          </span>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-slate-100 mb-1">Carlos Mario Restrepo</h2>
+        <p class="text-sm text-slate-400 flex items-center gap-1">
+          📍 Calle 15 # 4-22 (Barrio Centro)
+        </p>
+        
+        <div class="mt-6 bg-slate-900/70 p-4 rounded-2xl border border-slate-700/30">
+          <span class="text-xs text-slate-400 block mb-1">CUOTA DE HOY</span>
+          <span class="text-3xl font-black text-emerald-400">$50.000</span>
+        </div>
+      </div>
+
+      <!-- Botones Gigantes para usar con el pulgar -->
+      <div class="grid grid-cols-1 gap-3 mt-6">
+        <button class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-4 rounded-2xl text-base transition-all active:scale-95 shadow-lg shadow-emerald-900/30 flex justify-center items-center gap-2">
+          💵 Registrar Pago
+        </button>
+        <button class="bg-slate-700 hover:bg-slate-600 text-slate-300 font-semibold py-3.5 px-4 rounded-2xl text-sm transition-all active:scale-95">
+          ❌ No pagó / Pasó más tarde
+        </button>
+      </div>
+    </div>
+
+    <!-- TARJETA CLIENTE 2 -->
+    <div class="w-full shrink-0 snap-center bg-slate-800 rounded-3xl p-6 border border-slate-700/60 shadow-2xl flex flex-col justify-between min-h-[400px]">
+      <div>
+        <div class="flex justify-between items-start mb-4">
+          <span class="bg-slate-900 text-slate-400 text-xs font-bold px-3 py-1 rounded-full">
+            CLIENTE 2 DE 3
+          </span>
+          <span class="bg-amber-500/10 text-amber-400 text-xs px-2.5 py-1 rounded-md border border-amber-500/20 font-medium">
+            Pendiente
+          </span>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-slate-100 mb-1">Luz Elena Gómez</h2>
+        <p class="text-sm text-slate-400 flex items-center gap-1">
+          📍 Cra 8 # 22-10 (Frente al parque)
+        </p>
+        
+        <div class="mt-6 bg-slate-900/70 p-4 rounded-2xl border border-slate-700/30">
+          <span class="text-xs text-slate-400 block mb-1">CUOTA DE HOY</span>
+          <span class="text-3xl font-black text-emerald-400">$30.000</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-3 mt-6">
+        <button class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-4 rounded-2xl text-base transition-all active:scale-95 shadow-lg shadow-emerald-900/30 flex justify-center items-center gap-2">
+          💵 Registrar Pago
+        </button>
+        <button class="bg-slate-700 hover:bg-slate-600 text-slate-300 font-semibold py-3.5 px-4 rounded-2xl text-sm transition-all active:scale-95">
+          ❌ No pagó / Pasó más tarde
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Indicador inferior de que hay más tarjetas (Opcional, da guía visual) -->
+  <footer class="text-center text-xs text-slate-500 py-2 shrink-0">
+    ← Desliza a los lados →
+  </footer>
+</div>
